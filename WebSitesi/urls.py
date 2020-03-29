@@ -19,7 +19,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('iletisim/',include("iletisim.urls")),
-    path('',TemplateView.as_view(template_name="index.html"),name="AnaSayfa"),
+    path('iletisim/',include("iletisim.urls")), #127.0.0.1:8000/iletisim
+    path('',TemplateView.as_view(template_name="index.html"),name="AnaSayfa"), #127.0.0.1:8000
     
 ]
