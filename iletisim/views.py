@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from .models import  IletisimModel
 from .forms import  IletisimForm
 
@@ -14,5 +14,14 @@ def iletiDetay(request,pk):
 
 
 def yeni_ileti(request):
-    form = IletisimForm()
+    if request.method == "POST":
+        form = IletisimForm(request.POST)
+        if form.is_valid():
+            ileti = form.save(commit=False)
+            #######################
+            ileti.save()
+            return redirect('iletiDetay',pk=ileti.pk)
+    else:
+        form = IletisimForm()
     return render(request,"iletisim/duzenle.html",{"form":form})
+
