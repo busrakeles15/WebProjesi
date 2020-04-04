@@ -5,6 +5,7 @@
 <p> Merhaba </p>
 <ul>
 {% for ileti in iletis %}
+<a href="{% url 'iletiDetay' pk=ileti.pk %}">Detay</a>
 <li> {{ileti.adi}} {{ileti.soyadi}} </li>
 {% endfor %}
 </ul>
