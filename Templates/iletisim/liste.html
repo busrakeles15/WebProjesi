@@ -2,7 +2,7 @@
 
 {% block icerik %}
 <h1>İletişim Ana Sayfası</h1>
-<p> Merhaba </p>
+<p> <a href="{% url 'yeni_ileti' %}"> Yeni ileti </a> </p>
 <ul>
 {% for ileti in iletis %}
 <a href="{% url 'iletiDetay' pk=ileti.pk %}">Detay</a>

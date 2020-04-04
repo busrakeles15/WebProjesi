@@ -1,0 +1,10 @@
+{% extends '../base2.html' %}
+
+{% block icerik %}
+<h1>Yeni Mesaj</h1>
+<form method="POST">
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit">Gönder</button>
+</form>
+{% endblock %}
